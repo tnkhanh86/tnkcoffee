@@ -1,0 +1,66 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}TNK Coffee - Giới Thiệu{% endblock %}
+
+{% block content %}
+<!-- Page Header Start -->
+<div class="container-fluid bg-dark bg-img p-5 mb-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 text-uppercase text-white">Giới Thiệu</h1>
+            <a href="{% url 'home' %}">Trang Chủ</a>
+            <i class="far fa-square text-primary px-2"></i>
+            <a href="{% url 'about' %}">Giới Thiệu</a>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- About Start -->
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Giới Thiệu</h2>
+            <h1 class="display-4 text-uppercase">Chào Mừng Đến <span class="text-nowrap">TNK Coffee</span></h1>
+        </div>
+        <div class="row gx-5">
+            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100"
+                        src="{% static 'pages/images/products/Phin_Sua_Da.jpg' %}" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 pb-5">
+                <h4 class="mb-4">Chúng tôi tự hào mang đến những ly cà phê đậm đà bản sắc Việt, được chọn lọc từ
+                    những hạt cà phê tốt nhất trên vùng cao nguyên.</h4>
+                <p class="mb-5">Với hơn 10 năm kinh nghiệm, TNK Coffee cam kết mỗi chiếc bánh là một tác phẩm nghệ
+                    thuật, không chỉ ngon miệng mà còn đẹp mắt. Chúng tôi luôn nỗ lực không ngừng để mang lại niềm
+                    vui cho khách hàng qua từng hương vị.</p>
+                <div class="row g-5">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
+                            style="width: 90px; height: 90px;">
+                            <i class="fa fa-heartbeat fa-2x text-white"></i>
+                        </div>
+                        <h4 class="text-uppercase">100% Tốt Cho Sức Khỏe</h4>
+                        <p class="mb-0">100% hạt cà phê được trồng và thu hoạch thủ công tại Việt Nam, mang trọn
+                            hương vị của đất trời.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
+                            style="width: 90px; height: 90px;">
+                            <i class="fa fa-award fa-2x text-white"></i>
+                        </div>
+                        <h4 class="text-uppercase">Đạt Giải Thưởng</h4>
+                        <p class="mb-0">100% hạt cà phê được trồng và thu hoạch thủ công tại Việt Nam, mang trọn
+                            hương vị của đất trời.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+{% endblock %}

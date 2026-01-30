@@ -1,0 +1,108 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}TNK Coffee - Tin Tức{% endblock %}
+
+{% block content %}
+<!-- Page Header Start -->
+<div class="container-fluid bg-dark bg-img p-5 mb-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 text-uppercase text-white">Tin Tức</h1>
+            <a href="{% url 'home' %}">Trang Chủ</a>
+            <i class="far fa-square text-primary px-2"></i>
+            <a href="{% url 'news' %}">Tin Tức</a>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- News Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Tin Tức</h2>
+            <h1 class="display-4 text-uppercase">Tin Tức Mới Nhất</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden bg-primary p-4 d-flex align-items-center justify-content-center"
+                        style="height: 300px;">
+                        <p class="text-white text-center m-0 fs-5">Uống cà phê khi bụng đói có thể gây hại cho sức
+                            khỏe
+                            do nồng độ axit cao và tác động đến hệ tiêu hóa.</p>
+                        <a href="https://vnexpress.net/4-ly-do-khong-nen-uong-ca-phe-khi-bung-doi-5008264.html"
+                            target="_blank"
+                            class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center text-decoration-none">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <span class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"><i
+                                        class="bi bi-link-45deg fw-normal"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-dark border-inner text-center p-4">
+                        <h4 class="text-uppercase text-primary"><a
+                                href="https://vnexpress.net/4-ly-do-khong-nen-uong-ca-phe-khi-bung-doi-5008264.html"
+                                target="_blank" class="text-primary text-decoration-none">4 Lý Do Không Nên Uống Cà
+                                Phê Khi Bụng Đói</a></h4>
+                        <p class="text-white m-0">26 Tháng 1, 2026</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden bg-primary p-4 d-flex align-items-center justify-content-center"
+                        style="height: 300px;">
+                        <p class="text-white text-center m-0 fs-5">Trung Quốc bất ngờ tăng mạnh nhập khẩu cà phê,
+                            mở ra cơ hội lớn cho xuất khẩu cà phê Việt Nam trong năm 2026 và các năm tiếp theo.</p>
+                        <a href="https://nld.com.vn/gia-ca-phe-hom-nay-26-1-trung-quoc-bat-ngo-tang-manh-nhap-khau-196260126075654841.htm"
+                            target="_blank"
+                            class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center text-decoration-none">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <span class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"><i
+                                        class="bi bi-link-45deg fw-normal"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-dark border-inner text-center p-4">
+                        <h4 class="text-uppercase text-primary"><a
+                                href="https://nld.com.vn/gia-ca-phe-hom-nay-26-1-trung-quoc-bat-ngo-tang-manh-nhap-khau-196260126075654841.htm"
+                                target="_blank" class="text-primary text-decoration-none">Trung Quốc Tăng Nhập Khẩu
+                                Cà
+                                Phê</a></h4>
+                        <p class="text-white m-0">Cơ Hội Xuất Khẩu Lớn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden bg-primary p-4 d-flex align-items-center justify-content-center"
+                        style="height: 300px;">
+                        <p class="text-white text-center m-0 fs-5">Giá cà phê hôm nay tăng 3 con số nhưng người
+                            trồng
+                            chỉ vui một nửa do lo ngại về biến động thị trường và chi phí đầu vào.</p>
+                        <a href="https://nld.com.vn/gia-ca-phe-hom-nay-25-1-gia-tang-3-con-so-196260125075607757.htm"
+                            target="_blank"
+                            class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center text-decoration-none">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <span class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"><i
+                                        class="bi bi-link-45deg fw-normal"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-dark border-inner text-center p-4">
+                        <h4 class="text-uppercase text-primary"><a
+                                href="https://nld.com.vn/gia-ca-phe-hom-nay-25-1-gia-tang-3-con-so-196260125075607757.htm"
+                                target="_blank" class="text-primary text-decoration-none">Giá Cà Phê Tăng 3 Con
+                                Số</a></h4>
+                        <p class="text-white m-0">Biến Động Thị Trường</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- News End -->
+{% endblock %}
