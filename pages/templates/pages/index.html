@@ -1,0 +1,217 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Start -->
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+    <div class="container py-5">
+        <div class="row justify-content-start">
+            <div class="col-lg-8 text-center text-lg-start">
+                <h1 class="font-secondary text-primary mb-4">Hương Vị Việt</h1>
+                <h1 class="display-1 text-uppercase text-white mb-4">TNK Coffee</h1>
+                <h1 class="text-uppercase text-white">Cà Phê Thượng Hạng</h1>
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                    <a href="" class="btn btn-primary border-inner py-3 px-5 me-5">Xem Thêm</a>
+                    <button type="button" class="btn-play" data-bs-toggle="modal"
+                        data-src="https://www.youtube.com/embed/your_coffee_video_id" data-bs-target="#videoModal">
+                        <span></span>
+                    </button>
+                    <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Xem Video</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+<!-- Video Modal Start -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 16:9 aspect ratio -->
+                <div class="ratio ratio-16x9">
+                    <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                        allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Modal End -->
+
+
+<!-- About Start -->
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Giới Thiệu</h2>
+            <h1 class="display-4 text-uppercase">Chào Mừng Đến <span class="text-nowrap">TNK Coffee</span></h1>
+        </div>
+        <div class="row gx-5">
+            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100"
+                        src="{% static 'pages/images/products/Phin_Sua_Da.jpg' %}" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 pb-5">
+                <h4 class="mb-4">Chúng tôi tự hào mang đến những ly cà phê đậm đà bản sắc Việt, được chọn lọc từ
+                    những hạt cà phê tốt nhất trên vùng cao nguyên.</h4>
+                <p class="mb-5">Với hơn 10 năm kinh nghiệm, TNK Coffee cam kết mỗi chiếc bánh là một tác phẩm nghệ
+                    thuật, không chỉ ngon miệng mà còn đẹp mắt. Chúng tôi luôn nỗ lực không ngừng để mang lại niềm
+                    vui cho khách hàng qua từng hương vị.</p>
+                <div class="row g-5">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
+                            style="width: 90px; height: 90px;">
+                            <i class="fa fa-heartbeat fa-2x text-white"></i>
+                        </div>
+                        <h4 class="text-uppercase">100% Tốt Cho Sức Khỏe</h4>
+                        <p class="mb-0">100% hạt cà phê được trồng và thu hoạch thủ công tại Việt Nam, mang trọn
+                            hương vị của đất trời.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
+                            style="width: 90px; height: 90px;">
+                            <i class="fa fa-award fa-2x text-white"></i>
+                        </div>
+                        <h4 class="text-uppercase">Đạt Giải Thưởng</h4>
+                        <p class="mb-0">100% hạt cà phê được trồng và thu hoạch thủ công tại Việt Nam, mang trọn
+                            hương vị của đất trời.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Service Start -->
+<div class="container-fluid service position-relative px-5 my-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <div class="bg-primary border-inner text-center text-white p-5">
+                    <img src="{% static 'pages/images/products/HLC_New_logo_5.1_Products__PHIN_DEN_DA.jpg' %}"
+                        class="img-fluid mb-3"
+                        style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+                    <h4 class="text-uppercase mb-3">Cà Phê</h4>
+                    <p>Hương vị cà phê Việt Nam đích thực, đậm đà và lôi cuốn.</p>
+                    <a class="text-uppercase text-dark" href="{% url 'menu' %}#tab-1">Xem Thêm <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="bg-primary border-inner text-center text-white p-5">
+                    <img src="{% static 'pages/images/products/HLC_New_logo_5.1_Products__FREEZE_TRA_XANH.jpg' %}"
+                        class="img-fluid mb-3"
+                        style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+                    <h4 class="text-uppercase mb-3">Freeze</h4>
+                    <p>Sảng khoái với các dòng đá xay mát lạnh, kết hợp độc đáo.</p>
+                    <a class="text-uppercase text-dark" href="{% url 'menu' %}#tab-2">Xem Thêm <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="bg-primary border-inner text-center text-white p-5">
+                    <img src="{% static 'pages/images/products/HLC_New_logo_5.1_Products__TRA_SEN_VANG_CU_NANG.jpg' %}"
+                        class="img-fluid mb-3"
+                        style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+                    <h4 class="text-uppercase mb-3">Trà</h4>
+                    <p>Thanh mát, nhẹ nhàng với các loại trà thượng hạng.</p>
+                    <a class="text-uppercase text-dark" href="{% url 'menu' %}#tab-3">Xem Thêm <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="bg-primary border-inner text-center text-white p-5">
+                    <img src="{% static 'pages/images/products/TIRAMISU.jpg' %}" class="img-fluid mb-3"
+                        style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+                    <h4 class="text-uppercase mb-3">Bánh Ngọt</h4>
+                    <p>Ngọt ngào, tinh tế, là mảnh ghép hoàn hảo cho ly cà phê.</p>
+                    <a class="text-uppercase text-dark" href="{% url 'menu' %}#tab-4">Xem Thêm <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-6 text-center">
+                <h1 class="text-uppercase text-light mb-4">Giảm Giá 30% Mùa Hè Này</h1>
+                <a href="{% url 'menu' %}" class="btn btn-primary border-inner py-3 px-5">Đặt Ngay</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service Start -->
+
+
+<!-- Testimonial Start -->
+<div class="container-fluid py-5 d-flex flex-column justify-content-center" style="min-height: 70vh;">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Đánh Giá</h2>
+            <h1 class="display-4 text-uppercase">Khách Hàng Nhận Xét!!!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item bg-dark text-white border-inner p-4 d-flex flex-column justify-content-center">
+                <div class="d-flex align-items-center mb-3">
+                    <img class="img-fluid flex-shrink-0" src="{% static 'pages/img/testimonial-1.jpg' %}"
+                        style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <h4 class="text-primary text-uppercase mb-1">Tên Khách Hàng</h4>
+                        <span>Nghề Nghiệp</span>
+                    </div>
+                </div>
+                <p class="mb-0">Cà phê ở đây rất đậm đà, đúng gu người Việt. Không gian quán cũng rất tuyệt vời để
+                    làm việc và gặp gỡ bạn bè.
+                </p>
+            </div>
+            <div class="testimonial-item bg-dark text-white border-inner p-4 d-flex flex-column justify-content-center">
+                <div class="d-flex align-items-center mb-3">
+                    <img class="img-fluid flex-shrink-0" src="{% static 'pages/img/testimonial-2.jpg' %}"
+                        style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <h4 class="text-primary text-uppercase mb-1">Tên Khách Hàng</h4>
+                        <span>Nghề Nghiệp</span>
+                    </div>
+                </div>
+                <p class="mb-0">Cà phê ở đây rất đậm đà, đúng gu người Việt. Không gian quán cũng rất tuyệt vời để
+                    làm việc và gặp gỡ bạn bè.
+                </p>
+            </div>
+            <div class="testimonial-item bg-dark text-white border-inner p-4 d-flex flex-column justify-content-center">
+                <div class="d-flex align-items-center mb-3">
+                    <img class="img-fluid flex-shrink-0" src="{% static 'pages/img/testimonial-3.jpg' %}"
+                        style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <h4 class="text-primary text-uppercase mb-1">Tên Khách Hàng</h4>
+                        <span>Nghề Nghiệp</span>
+                    </div>
+                </div>
+                <p class="mb-0">Cà phê ở đây rất đậm đà, đúng gu người Việt. Không gian quán cũng rất tuyệt vời để
+                    làm việc và gặp gỡ bạn bè.
+                </p>
+            </div>
+            <div class="testimonial-item bg-dark text-white border-inner p-4 d-flex flex-column justify-content-center">
+                <div class="d-flex align-items-center mb-3">
+                    <img class="img-fluid flex-shrink-0" src="{% static 'pages/img/testimonial-4.jpg' %}"
+                        style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <h4 class="text-primary text-uppercase mb-1">Tên Khách Hàng</h4>
+                        <span>Nghề Nghiệp</span>
+                    </div>
+                </div>
+                <p class="mb-0">Cà phê ở đây rất đậm đà, đúng gu người Việt. Không gian quán cũng rất tuyệt vời để
+                    làm việc và gặp gỡ bạn bè.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+{% endblock %}

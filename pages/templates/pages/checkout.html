@@ -1,0 +1,145 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}TNK Coffee - Thanh Toán{% endblock %}
+
+{% block extra_css %}
+<style>
+    .checkout-form-label {
+        font-weight: 600;
+        color: #DA9F5B;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+
+    .checkout-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-summary-item {
+        border-bottom: 1px dashed #dee2e6;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .order-summary-item:last-child {
+        border-bottom: none;
+    }
+
+    .btn-checkout {
+        background: #DA9F5B;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+    }
+
+    .btn-checkout:hover {
+        background: #333;
+        color: #DA9F5B;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header Start -->
+<div class="container-fluid bg-dark bg-img p-5 mb-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 text-uppercase text-white">Thanh Toán</h1>
+            <a href="{% url 'home' %}">Trang Chủ</a>
+            <i class="far fa-square text-primary px-2"></i>
+            <a href="">Thanh Toán</a>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Checkout Start -->
+<div class="container-fluid pt-5">
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row g-5">
+                <!-- Shipping Info Column -->
+                <div class="col-lg-7">
+                    <div class="bg-white p-5 checkout-card mb-5">
+                        <h4 class="mb-4 text-primary text-uppercase"
+                            style="border-bottom: 2px solid #DA9F5B; display: inline-block; padding-bottom: 5px;">Thông
+                            Tin Giao Hàng</h4>
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <label for="id_name" class="checkout-form-label">Họ Tên <span
+                                        class="text-danger">*</span></label>
+                                {{ form.name }}
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="id_phone" class="checkout-form-label">Số Điện Thoại <span
+                                        class="text-danger">*</span></label>
+                                {{ form.phone }}
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="id_email" class="checkout-form-label">Email <span
+                                        class="text-danger">*</span></label>
+                                {{ form.email }}
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="id_address" class="checkout-form-label">Địa Chỉ Giao Hàng <span
+                                        class="text-danger">*</span></label>
+                                {{ form.address }}
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="id_note" class="checkout-form-label">Ghi Chú Đơn Hàng</label>
+                                {{ form.note }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary Column -->
+                <div class="col-lg-5">
+                    <div class="bg-dark text-white p-5 checkout-card mb-5">
+                        <h4 class="mb-4 text-primary text-uppercase">Đơn Hàng Của Bạn</h4>
+                        <div class="mb-4">
+                            {% for item in cart %}
+                            <div class="d-flex justify-content-between align-items-center order-summary-item">
+                                <div>
+                                    <h6 class="text-white mb-0">{{ item.product.name }}</h6>
+                                    <small class="text-muted">Số lượng: {{ item.quantity }}</small>
+                                </div>
+                                <span class="text-primary font-weight-bold">{{ item.total_price|intcomma }}đ</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="border-top border-white pt-3 mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <h6 class="text-white">Tạm tính</h6>
+                                <h6 class="text-white">{{ cart.get_total_price|intcomma }}đ</h6>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <h6 class="text-white">Phí vận chuyển</h6>
+                                <h6 class="text-primary">Miễn phí</h6>
+                            </div>
+                            <div class="d-flex justify-content-between mt-4">
+                                <h4 class="text-white text-uppercase">Tổng Cộng</h4>
+                                <h4 class="text-primary">{{ cart.get_total_price|intcomma }}đ</h4>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-checkout w-100 py-3 rounded-0" type="submit">Xác Nhận Đặt Hàng</button>
+                        <p class="text-center mt-3 text-muted" style="font-size: 0.85rem;"><i
+                                class="fa fa-lock me-1"></i> Thông tin của bạn được bảo mật an toàn.</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Checkout End -->
+{% endblock %}

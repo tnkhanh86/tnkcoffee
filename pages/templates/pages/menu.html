@@ -1,0 +1,239 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}TNK Coffee - Thực Đơn{% endblock %}
+
+{% block content %}
+<!-- Page Header Start -->
+<div class="container-fluid bg-dark bg-img p-5 mb-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 text-uppercase text-white">Thực Đơn</h1>
+            <a href="{% url 'home' %}">Trang Chủ</a>
+            <i class="far fa-square text-primary px-2"></i>
+            <a href="">Thực Đơn</a>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Products Start -->
+<div class="container-fluid about py-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Thực Đơn</h2>
+            <h1 class="display-4 text-uppercase">Khám Phá Cà Phê</h1>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-6">
+                <input type="text" id="menuSearchInput" class="form-control p-3"
+                    placeholder="Tìm kiếm món ăn, đồ uống..." style="border-radius: 30px; border: 1px solid #da9f5b;">
+            </div>
+        </div>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
+                {% for category in categories %}
+                <li class="nav-item">
+                    <a class="nav-link text-white {% if forloop.first %}active{% endif %}" data-bs-toggle="pill"
+                        href="#tab-{{ forloop.counter }}">{{ category.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="tab-content">
+                {% for category in categories %}
+                <div id="tab-{{ forloop.counter }}"
+                    class="tab-pane fade {% if forloop.first %}show active{% endif %} p-0">
+                    <div class="row g-3">
+                        {% for product in category.products.all %}
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100" data-id="{{ product.id }}">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="{% static product.image_url %}" alt=""
+                                        style="width: 150px; height: 85px; object-fit: cover;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">{{ product.price|intcomma }}đ</h4>
+                                </div>
+                                <div
+                                    class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4 product-info-box">
+                                    <h5 class="text-uppercase">{{ product.name }}</h5>
+                                    <span class="product-description">{{ product.description }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <div class="col-12">
+                            <p>Chưa có sản phẩm trong danh mục này.</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products End -->
+
+
+<!-- Offer Start -->
+<div class="container-fluid bg-offer my-5 py-5">
+    <div class="container py-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-7 text-center">
+                <div class="section-title position-relative text-center mx-auto mb-4 pb-3" style="max-width: 600px;">
+                    <h2 class="text-primary font-secondary">Combo Đặc Biệt</h2>
+                    <h1 class="display-4 text-uppercase text-white">Hương Vị Đậm Đà</h1>
+                </div>
+                <p class="text-white mb-4">Đừng bỏ lỡ các combo Cà Phê và Bánh Mì hấp dẫn. Nạp năng lượng cho ngày
+                    mới ngay hôm nay!</p>
+                <a href="" class="btn btn-primary border-inner py-3 px-5 me-3">Mua Ngay</a>
+                <a href="" class="btn btn-dark border-inner py-3 px-5">Xem Thêm</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Offer End -->
+
+
+<!-- Product Detail Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true"
+    data-url="{% url 'cart_add' 0 %}">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Chi Tiết Sản Phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <img src="" id="modalProductImg" class="img-fluid w-100"
+                            style="object-fit: cover; max-height: 400px;">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="text-primary" id="modalProductName"></h3>
+                        <h4 class="text-dark bg-secondary p-2 d-inline-block" id="modalProductPrice"></h4>
+                        <p class="mt-3" id="modalProductDesc"></p>
+                        <form id="addToCartForm" method="post" action="">
+                            {% csrf_token %}
+                            <div class="input-group mb-3" style="width: 150px;">
+                                <span class="input-group-text">Số lượng</span>
+                                <input type="number" name="quantity" class="form-control" value="1" min="1">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Thêm Vào Giỏ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'pages/js/pagination.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        // Make product items clickable and show modal
+        $('.tab-pane .row .col-lg-6 .d-flex.h-100').css('cursor', 'pointer').click(function () {
+            var item = $(this);
+            var productId = item.data('id');
+            var img = item.find('img').attr('src');
+            var price = item.find('h4').text();
+            var name = item.find('h5').text();
+            var desc = item.find('.product-description').text();
+
+            $('#modalProductImg').attr('src', img);
+            $('#modalProductName').text(name);
+            $('#modalProductPrice').text(price);
+            $('#modalProductDesc').text(desc);
+
+            var baseUrl = $('#productModal').data('url');
+            var actionUrl = baseUrl.replace('0', productId);
+            $('#addToCartForm').attr('action', actionUrl);
+            $('#addToCartForm input[name="quantity"]').val(1);
+
+            var productModal = new bootstrap.Modal(document.getElementById('productModal'));
+            productModal.show();
+        });
+
+        // AJAX Add to Cart
+        $('#addToCartForm').on('submit', function (e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = form.attr('action');
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(),
+                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                success: function (response) {
+                    if (response.success) {
+                        // Update cart badge
+                        $('#cart-badge').text(response.cart_length);
+
+                        // Close modal
+                        var productModalEl = document.getElementById('productModal');
+                        var modal = bootstrap.Modal.getInstance(productModalEl);
+                        modal.hide();
+
+                        // Optional: Show success message/toast
+                        alert("Đã thêm vào giỏ hàng thành công!");
+                    } else {
+                        alert("Có lỗi xảy ra, vui lòng thử lại.");
+                    }
+                },
+                error: function () {
+                    alert("Có lỗi xảy ra khi kết nối tới server.");
+                }
+            });
+        });
+
+        // Menu Search Functionality
+        $("#menuSearchInput").on("input", function () {
+            var value = $(this).val().toLowerCase();
+
+            if (value.length > 0) {
+                // Show all tab panes and hide nav pills when searching
+                $(".tab-pane").addClass("show active").css("display", "block").css("opacity", "1");
+                $(".nav-pills").hide();
+
+                // Filter items
+                $(".tab-pane .row .col-lg-6").each(function () {
+                    var title = $(this).find("h5.text-uppercase").text().toLowerCase();
+                    var desc = $(this).find(".product-description").text().toLowerCase();
+                    var match = title.indexOf(value) > -1 || desc.indexOf(value) > -1;
+                    if (match) {
+                        $(this).removeClass("d-none");
+                    } else {
+                        $(this).addClass("d-none");
+                    }
+                });
+            } else {
+                // Restore original state
+                $(".nav-pills").show();
+
+                // Reset items visibility
+                $(".tab-pane .row .col-lg-6").removeClass("d-none").removeAttr("style");
+
+                // Reset panes styles
+                $(".tab-pane").removeAttr("style").removeClass("show active");
+
+                // Restore active tab directly - Target ONLY the tab navigation links
+                var activeTab = $(".nav-pills .nav-link.active");
+                var targetPaneSelector = activeTab.attr("href");
+                if (targetPaneSelector) {
+                    $(targetPaneSelector).addClass("show active");
+                } else {
+                    // Fallback
+                    $("#tab-1").addClass("show active");
+                    // Ensure tab-1 link is active if none was found
+                    $('a[href="#tab-1"]').addClass('active');
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

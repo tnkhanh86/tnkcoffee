@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}TNK Coffee - Coffee Shop Website Template{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'pages/img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'pages/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'pages/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'pages/css/style.css' %}" rel="stylesheet">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid px-0 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-4 text-center bg-secondary py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <i class="bi bi-envelope fs-1 text-primary me-3"></i>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1">Email</h6>
+                        <span>tnk@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center bg-primary border-inner py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <a href="{% url 'home' %}" class="navbar-brand">
+                        <h1 class="m-0 text-uppercase text-white"><i class="fa fa-mug-hot fs-1 text-dark me-3"></i>TNK
+                            Coffee</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center bg-secondary py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1">Gọi Ngay</h6>
+                        <span>0933.xxx.xxx</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="{% url 'home' %}" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-mug-hot fs-1 text-primary me-3"></i>TNK Coffee
+            </h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto mx-lg-auto py-0">
+                <a href="{% url 'home' %}"
+                    class="nav-item nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Trang
+                    Chủ</a>
+                <a href="{% url 'about' %}"
+                    class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">Giới
+                    Thiệu</a>
+                <div class="nav-item dropdown">
+                    <a href="{% url 'menu' %}"
+                        class="nav-link dropdown-toggle {% if request.resolver_match.url_name == 'menu' %}active{% endif %}"
+                        data-bs-toggle="dropdown">Thực Đơn</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="{% url 'menu' %}#tab-1" class="dropdown-item"><i class="fa fa-mug-hot"></i>Cà Phê</a>
+                        <a href="{% url 'menu' %}#tab-2" class="dropdown-item"><i class="fa fa-snowflake"></i>Freeze</a>
+                        <a href="{% url 'menu' %}#tab-3" class="dropdown-item"><i class="fa fa-leaf"></i>Trà</a>
+                        <a href="{% url 'menu' %}#tab-4" class="dropdown-item"><i class="fa fa-cookie"></i>Bánh Ngọt</a>
+                    </div>
+                </div>
+                <a href="{% url 'news' %}"
+                    class="nav-item nav-link {% if request.resolver_match.url_name == 'news' %}active{% endif %}">Tin
+                    Tức</a>
+                <a href="{% url 'contact' %}"
+                    class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Liên
+                    Hệ</a>
+                <a href="{% url 'cart_detail' %}"
+                    class="nav-item nav-link {% if request.resolver_match.url_name == 'cart_detail' %}active{% endif %}">Giỏ
+                    Hàng <span id="cart-badge" class="badge bg-primary">{{ cart|length }}</span></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    {% block content %}{% endblock %}
+
+
+    <!-- Maps Start -->
+    <div class="container-fluid p-0 mb-5">
+        <iframe style="width: 100%; height: 400px;"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.669726976156!2d106.68222831480062!3d10.759917092332822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b7c3ed289%3A0xa0665189479a4c8e!2zMjI3IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIEPhu6IsIFBoxrDhu51uZyA0LCBRdeG6rW4gNSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1646294726544!5m2!1sen!2s"
+            frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <!-- Maps End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-img text-secondary" style="margin-top: 90px">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 mb-lg-n5">
+                    <div
+                        class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
+                        <a href="{% url 'home' %}" class="navbar-brand">
+                            <h1 class="m-0 text-uppercase text-white"><i
+                                    class="fa fa-mug-hot fs-1 text-dark me-3"></i>TNK Coffee</h1>
+                        </a>
+                        <p class="mt-3">TNK Coffee là thiên đường của những chiếc bánh ngọt ngào. Chúng tôi luôn đặt tâm
+                            huyết vào từng sản phẩm để mang lại trải nghiệm tuyệt vời nhất cho khách hàng.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Liên Hệ Chúng Tôi</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">227 Nguyễn Văn Cừ, Chợ Quán, TpHCM</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">tnk@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">0933.xxx.xxx</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Liên Kết Nhanh</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-secondary mb-2" href="{% url 'home' %}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Trang Chủ</a>
+                                <a class="text-secondary mb-2" href="{% url 'about' %}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Giới Thiệu</a>
+                                <a class="text-secondary mb-2" href="{% url 'menu' %}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Thực Đơn</a>
+                                <a class="text-secondary mb-2" href="{% url 'news' %}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Tin Tức</a>
+                                <a class="text-secondary" href="{% url 'contact' %}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Liên Hệ</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Bản Tin</h4>
+                            <p>Đăng ký nhận tin để cập nhật những ưu đãi mới nhất từ chúng tôi.</p>
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-white p-3"
+                                        placeholder="Email của bạn">
+                                    <button class="btn btn-primary">Đăng Ký</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-secondary py-4" style="background: #111111;">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">TNK Coffee</a>. Bảo lưu mọi quyền.
+
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Thiết kế bởi <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'pages/lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'pages/lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'pages/lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'pages/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'pages/js/main.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>
