@@ -8,7 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-key-placeholder')
 
 # DEBUG: False if RENDER env var is set (production), else True (local)
-DEBUG = 'RENDER' not in os.environ
+# DEBUG: Temporarily True for invalid Render debugging
+DEBUG = True # 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['*'] # Thay đổi thành danh sách cụ thể nếu cần
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
