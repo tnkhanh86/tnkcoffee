@@ -7,8 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY: Attempt to read from env, fallback to insecure local key for dev
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-key-placeholder')
 
-# DEBUG: False if RENDER env var is set (production), else True (local)
-DEBUG = 'RENDER' not in os.environ
+# DEBUG: Always False in production to prevent memory leaks
+DEBUG = False
 
 ALLOWED_HOSTS = ['*'] # Thay đổi thành danh sách cụ thể nếu cần
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -108,7 +108,9 @@ else:
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Cấu hình gửi mail thật (Ví dụ với Gmail)
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# Tạm tắt SMTP để test lỗi quá tải RAM
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
