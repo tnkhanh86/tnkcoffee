@@ -116,5 +116,5 @@ EMAIL_USE_TLS = True
 # Thay bằng email của bạn
 EMAIL_HOST_USER = 'trannhutkhanh86@gmail.com' 
 # Thay bằng Mật khẩu ứng dụng (App Password) - KHÔNG PHẢI mật khẩu đăng nhập Gmail
-EMAIL_HOST_PASSWORD = 'fmjb pdnl jolu ywum' 
+EMAIL_HOST_PASSWORD = 'fmjbpdnljoluywum' 
 
