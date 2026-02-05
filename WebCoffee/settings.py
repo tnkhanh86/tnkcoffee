@@ -110,13 +110,14 @@ else:
 # Cấu hình Email
 # LƯU Ý: Do giới hạn RAM của Render Free Tier, ta sử dụng Console Backend.
 # Email sẽ không gửi đi thật mà chỉ in ra Logs của Server.
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Cấu hình SMTP (Chỉ bật khi nâng cấp Server hoặc dùng SendGrid)
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'trannhutkhanh86@gmail.com' 
-# EMAIL_HOST_PASSWORD = 'fmjbpdnljoluywum' 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'trannhutkhanh86@gmail.com' 
+EMAIL_HOST_PASSWORD = 'fmjb pdnl jolu ywum' 
+
 
