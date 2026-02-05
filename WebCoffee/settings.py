@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-key-placeholder')
 # DEBUG: Always False in production to prevent memory leaks
 DEBUG = False
 
-ALLOWED_HOSTS = ['*'] # Thay đổi thành danh sách cụ thể nếu cần
+ALLOWED_HOSTS = ['*', '.pythonanywhere.com'] # Thay đổi thành danh sách cụ thể nếu cần
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
@@ -107,16 +107,16 @@ else:
     STATIC_ROOT = BASE_DIR / 'static'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Cấu hình gửi mail thật (Ví dụ với Gmail)
-# Tạm tắt SMTP để test lỗi quá tải RAM
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-# Thay bằng email của bạn
-EMAIL_HOST_USER = 'trannhutkhanh86@gmail.com' 
-# Thay bằng Mật khẩu ứng dụng (App Password) - KHÔNG PHẢI mật khẩu đăng nhập Gmail
-EMAIL_HOST_PASSWORD = 'fmjbpdnljoluywum' 
+# Cấu hình Email
+# LƯU Ý: Do giới hạn RAM của Render Free Tier, ta sử dụng Console Backend.
+# Email sẽ không gửi đi thật mà chỉ in ra Logs của Server.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# Cấu hình SMTP (Chỉ bật khi nâng cấp Server hoặc dùng SendGrid)
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'trannhutkhanh86@gmail.com' 
+# EMAIL_HOST_PASSWORD = 'fmjbpdnljoluywum' 
 
