@@ -1,0 +1,598 @@
+[
+{
+  "model": "pages.category",
+  "pk": 1,
+  "fields": {
+    "name": "Cà phê",
+    "slug": "ca-phe"
+  }
+},
+{
+  "model": "pages.category",
+  "pk": 2,
+  "fields": {
+    "name": "Freeze",
+    "slug": "freeze"
+  }
+},
+{
+  "model": "pages.category",
+  "pk": 3,
+  "fields": {
+    "name": "Trà",
+    "slug": "tra"
+  }
+},
+{
+  "model": "pages.category",
+  "pk": 4,
+  "fields": {
+    "name": "Bánh ngọt",
+    "slug": "banh-ngot"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "PHIN ĐEN ĐÁ",
+    "price": "29000",
+    "description": "Dành cho những tín đồ cà phê đích thực! Hương\n                                            vị cà phê truyền thống được phối trộn độc đáo tại TNK Coffee. Cà phê đậm đà\n                                            pha hoàn toàn từ Phin, cho thêm 1 thìa đường, một ít đá viên mát lạnh, tạo\n                                            nên Phin Đen Đá mang vị cà phê đậm đà chất Phin.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__PHIN_DEN_DA.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "MOCHA MACCHIATO",
+    "price": "69000",
+    "description": "Một thức uống yêu thích được kết hợp bởi giữa\n                                            sốt sô cô la ngọt ngào, sữa tươi và đặc biệt là cà phê espresso đậm đà mang\n                                            thương hiệu TNK Coffee. Bạn có thể tùy thích lựa chọn uống nóng hoặc dùng\n                                            chung với đá.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__MOCHA.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "LATTE",
+    "price": "65000",
+    "description": "Ly cà phê sữa ngọt ngào đến khó quên! Với một\n                                            chút nhẹ nhàng hơn so với Cappuccino, Latte của chúng tôi bắt đầu với cà phê\n                                            espresso, sau đó thêm sữa tươi và bọt sữa một cách đầy nghệ thuật. Bạn có\n                                            thể tùy thích lựa chọn uống nóng hoặc dùng chung với đá.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__LATTE_1.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "CAPPUCCINO",
+    "price": "65000",
+    "description": "Ly cà phê sữa đậm đà thời thượng! Một chút đậm\n                                            đà hơn so với Latte, Cappuccino của chúng tôi bắt đầu với cà phê espresso,\n                                            sau đó thêm một lượng tương đương giữa sữa tươi và bọt sữa cho thật hấp dẫn.\n                                            Bạn có thể tùy thích lựa chọn uống nóng hoặc dùng chung với đá.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__CAPPUCINO.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "AMERICANO",
+    "price": "45000",
+    "description": "Americano tại TNK Coffee là sự kết hợp giữa cà\n                                            phê espresso thêm vào nước đun sôi. Bạn có thể tùy thích lựa chọn uống nóng\n                                            hoặc dùng chung với đá.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__AMERICANO_NONG.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 6,
+  "fields": {
+    "category": 1,
+    "name": "ESPRESSO",
+    "price": "45000",
+    "description": "Đích thực là ly cà phê espresso ngon đậm đà!\n                                            Được chiết xuất một cách hoàn hảo từ loại cà phê rang được phối trộn độc đáo\n                                            từ những hạt cà phê Robusta và Arabica chất lượng hảo hạng.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__EXPRESSO.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 7,
+  "fields": {
+    "category": 1,
+    "name": "PHIN SỮA ĐÁ",
+    "price": "29000",
+    "description": "Hương vị cà phê Việt Nam đích thực! Từng hạt\n                                            cà phê hảo hạng được chọn bằng tay, phối trộn độc đáo giữa hạt Robusta từ\n                                            cao nguyên Việt Nam, thêm Arabica thơm lừng. Cà phê được pha từ Phin truyền\n                                            thống, hoà cùng sữa đặc sánh và thêm vào chút đá tạo nên ly Phin Sữa Đá –\n                                            Đậm Đà Chất Phin.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__PHIN_SUADA.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 8,
+  "fields": {
+    "category": 1,
+    "name": "PHIN ĐEN NÓNG",
+    "price": "29000",
+    "description": "Dành cho những tín đồ cà phê đích thực! Hương\n                                            vị cà phê truyền thống được phối trộn độc đáo tại TNK Coffee. Cà phê đậm đà\n                                            pha từ Phin, cho thêm 1 thìa đường, mang đến vị cà phê đậm đà chất\n                                            Phin.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_PHIN_DEN_NONG.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 9,
+  "fields": {
+    "category": 1,
+    "name": "PHIN SỮA NÓNG",
+    "price": "29000",
+    "description": "Hương vị cà phê Việt Nam đích thực! Từng hạt\n                                            cà phê hảo hạng được chọn bằng tay, phối trộn độc đáo giữa hạt Robusta từ\n                                            cao nguyên Việt Nam, thêm Arabica thơm lừng. Kết hợp với nước sôi từng giọt\n                                            cà phê được chiết xuất từ Phin truyền thống, hoà cùng sữa đặc sánh tạo nên\n                                            ly Phin Sữa Nóng – Đậm đà chất Phin.",
+    "image": "",
+    "image_url": "pages/images/products/HLC__PHIN_SUA_NONG.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 10,
+  "fields": {
+    "category": 1,
+    "name": "PHINDI CASSIA",
+    "price": "55000",
+    "description": "Với chất phin êm ái, hương vị cà phê Việt Nam\n                                            hiện đại kết hợp cùng hương quế nhẹ nhàng và thạch cà phê hấp dẫn.",
+    "image": "",
+    "image_url": "pages/images/products/Phindi_Cassia.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 11,
+  "fields": {
+    "category": 1,
+    "name": "PHINDI CHOCO",
+    "price": "45000",
+    "description": "PhinDi Choco - Cà phê Phin thế hệ mới với chất\n                                            Phin êm hơn, kết hợp cùng Choco ngọt tan mang đến hương vị mới lạ, không thể\n                                            hấp dẫn hơn!",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__PHINDI_CHOCO.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 12,
+  "fields": {
+    "category": 1,
+    "name": "PHINDI HẠNH NHÂN",
+    "price": "45000",
+    "description": "PhinDi Hạnh Nhân - Cà phê Phin thế hệ mới với\n                                            chất Phin êm hơn, kết hợp cùng Hạnh nhân thơm bùi mang đến hương vị mới lạ,\n                                            không thể hấp dẫn hơn!",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__PHINDI_HANH_NHAN.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 13,
+  "fields": {
+    "category": 1,
+    "name": "PHINDI KEM SỮA",
+    "price": "45000",
+    "description": "PhinDi Kem Sữa - Cà phê Phin thế hệ mới với\n                                            chất Phin êm hơn, kết hợp cùng Kem Sữa béo ngậy mang đến hương vị mới lạ,\n                                            không thể hấp dẫn hơn!",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__PHINDI_KEM_SUA.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 14,
+  "fields": {
+    "category": 1,
+    "name": "BẠC XỈU ĐÁ",
+    "price": "29000",
+    "description": "Nếu Phin Sữa Đá dành cho các bạn đam mê vị đậm\n                                            đà, thì Bạc Xỉu Đá là một sự lựa chọn nhẹ “đô\" cà phê nhưng vẫn thơm ngon,\n                                            chất lừ không kém!",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__BAC_XIU.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 15,
+  "fields": {
+    "category": 1,
+    "name": "CARAMEL MACCHIATO",
+    "price": "69000",
+    "description": "Thỏa mãn cơn thèm ngọt! Ly cà phê Caramel\n                                            Macchiato bắt đầu từ dòng sữa tươi và lớp bọt sữa béo ngậy, sau đó hòa quyện\n                                            cùng cà phê espresso đậm đà và sốt caramel ngọt ngào. Thông qua bàn tay điêu\n                                            luyện của các chuyên gia pha chế, mọi thứ hoàn toàn được nâng tầm thành nghệ\n                                            thuật! Bạn có thể tùy thích lựa chọn uống nóng hoặc dùng chung với\n                                            đá.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__CARAMEL_MACCHIATTO.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 16,
+  "fields": {
+    "category": 1,
+    "name": "COLD BREW ĐÀO",
+    "price": "79000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Cold_Brew_Peach.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 17,
+  "fields": {
+    "category": 1,
+    "name": "COLD BREW",
+    "price": "69000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Cold_Brew.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 18,
+  "fields": {
+    "category": 1,
+    "name": "PHINDI CASSIA",
+    "price": "69000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/PhinDi_Cassia.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 19,
+  "fields": {
+    "category": 1,
+    "name": "BẠC XỈU CULI",
+    "price": "55000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Bac_Xiu.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 20,
+  "fields": {
+    "category": 1,
+    "name": "PHIN CULI SỮA ĐÁ",
+    "price": "55000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Phin_Sua_Da.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 21,
+  "fields": {
+    "category": 1,
+    "name": "PHIN CULI ĐEN ĐÁ",
+    "price": "49000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Phin_Den_Da.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 22,
+  "fields": {
+    "category": 1,
+    "name": "CITRUS COFFEE DETONIC",
+    "price": "89000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Citrus_Cafe_De_Tonic.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 23,
+  "fields": {
+    "category": 1,
+    "name": "COLD BREW MILK FOAM",
+    "price": "79000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Cold_Brew_Milk_Foam.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 24,
+  "fields": {
+    "category": 2,
+    "name": "FREEZE SÔ-CÔ-LA",
+    "price": "55000",
+    "description": "Thiên đường đá xay sô cô la! Từ những thanh sô\n                                            cô la Việt Nam chất lượng được đem xay với đá cho đến khi mềm mịn, sau đó\n                                            thêm vào thạch sô cô la dai giòn, ở trên được phủ một lớp kem whip beo béo\n                                            và sốt sô cô la ngọt ngào. Tạo thành Freeze Sô-cô-la ngon mê mẩn chinh phục\n                                            bất kì ai!",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__FREEZE_CHOCO.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 25,
+  "fields": {
+    "category": 2,
+    "name": "COOKIES & CREAM",
+    "price": "55000",
+    "description": "Một thức uống ngon lạ miệng bởi sự kết hợp\n                                            hoàn hảo giữa cookies sô cô la giòn xốp cùng hỗn hợp sữa tươi cùng sữa đặc\n                                            đem say với đá viên, và cuối cùng không thể thiếu được chính là lớp kem whip\n                                            mềm mịn cùng cookies sô cô la say nhuyễn.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__COOKIES_FREEZE.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 26,
+  "fields": {
+    "category": 2,
+    "name": "CARAMEL PHIN FREEZE",
+    "price": "55000",
+    "description": "Thơm ngon khó cưỡng! Được kết hợp từ cà phê\n                                            truyền thống chỉ có tại TNK Coffee, cùng với caramel, thạch cà phê và đá xay\n                                            mát lạnh. Trên cùng là lớp kem tươi thơm béo và caramel ngọt ngào. Món nước\n                                            phù hợp trong những cuộc gặp gỡ bạn bè, bởi sự ngọt ngào thường mang mọi\n                                            người xích lại gần nhau.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__CARAMEL_FREEZE_PHINDI.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 27,
+  "fields": {
+    "category": 2,
+    "name": "CLASSIC PHIN FREEZE",
+    "price": "55000",
+    "description": "Thơm ngon đậm đà! Được kết hợp từ cà phê pha\n                                            Phin truyền thống chỉ có tại TNK Coffee, cùng với thạch cà phê và đá xay mát\n                                            lạnh. Trên cùng là lớp kem tươi thơm béo và bột ca cao đậm đà. Món nước hoàn\n                                            hảo để khởi đầu câu chuyện cùng bạn bè.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__CLASSIC_FREEZE_PHINDI.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 28,
+  "fields": {
+    "category": 2,
+    "name": "FREEZE TRÀ XANH",
+    "price": "55000",
+    "description": "Thức uống rất được ưa chuộng! Trà xanh thượng\n                                            hạng từ cao nguyên Việt Nam, kết hợp cùng đá xay, thạch trà dai dai, thơm\n                                            ngon và một lớp kem dày phủ lên trên vô cùng hấp dẫn. Freeze Trà Xanh thơm\n                                            ngon, mát lạnh, chinh phục bất cứ ai!",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__FREEZE_TRA_XANH.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 29,
+  "fields": {
+    "category": 3,
+    "name": "TRÀ THẠCH VẢI",
+    "price": "45000",
+    "description": "Một sự kết hợp thú vị giữa trà đen, những quả\n                                            vải thơm ngon và thạch giòn khó cưỡng, mang đến thức uống tuyệt hảo!",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__TRA_TACH_VAI.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 30,
+  "fields": {
+    "category": 3,
+    "name": "TRÀ SEN VÀNG (CỦ NĂNG)",
+    "price": "45000",
+    "description": "Thức uống chinh phục những thực khách khó\n                                            tính! Sự kết hợp độc đáo giữa trà Ô long, hạt sen thơm bùi và củ năng giòn\n                                            tan. Thêm vào chút sữa sẽ để vị thêm ngọt ngào.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__TRA_SEN_VANG_CU_NANG.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 31,
+  "fields": {
+    "category": 3,
+    "name": "TRÀ SEN VÀNG (SEN)",
+    "price": "45000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__TSV.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 32,
+  "fields": {
+    "category": 3,
+    "name": "TRÀ XANH ĐẬU ĐỎ",
+    "price": "45000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__TRA_XANH_DAU_DO.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 33,
+  "fields": {
+    "category": 3,
+    "name": "TRÀ THẠCH ĐÀO",
+    "price": "45000",
+    "description": "Vị trà đậm đà kết hợp cùng những miếng đào\n                                            thơm ngon mọng nước cùng thạch đào giòn dai. Thêm vào ít sữa để gia tăng vị\n                                            béo.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__TRA_THANH_DAO-09.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 34,
+  "fields": {
+    "category": 3,
+    "name": "TRÀ THANH ĐÀO",
+    "price": "45000",
+    "description": "Một trải nghiệm thú vị khác! Sự hài hòa giữa\n                                            vị trà cao cấp, vị sả thanh mát và những miếng đào thơm ngon mọng nước sẽ\n                                            mang đến cho bạn một thức uống tuyệt vời.",
+    "image": "",
+    "image_url": "pages/images/products/HLC_New_logo_5.1_Products__TRA_THANH_DAO-08.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 35,
+  "fields": {
+    "category": 3,
+    "name": "SET TRÀ CAO CẤP (TÙY CHỌN TRÀ)",
+    "price": "159000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Hot_Tea_Set.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 36,
+  "fields": {
+    "category": 3,
+    "name": "TRÀ QUẢ MỌNG ANH ĐÀO",
+    "price": "79000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Tra_Qua_Mong_Anh_Dao.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 37,
+  "fields": {
+    "category": 3,
+    "name": "TRÀ ỔI HỒNG",
+    "price": "79000",
+    "description": "Chưa có thông tin",
+    "image": "",
+    "image_url": "pages/images/products/Tra_Oi_Hong.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 38,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH CARAMEL PHÔ MAI",
+    "price": "35000",
+    "description": "Ngon khó cưỡng! Bánh phô mai thơm béo được phủ\n                                            bằng lớp caramel ngọt ngào.",
+    "image": "",
+    "image_url": "pages/images/products/CARAMELPHOMAI.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 39,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH TIRAMISU",
+    "price": "35000",
+    "description": "Tiramisu thơm béo, làm từ ca-cao Việt Nam đậm\n                                            đà, kết hợp với phô mai ít béo, vani và chút rum nhẹ nhàng.",
+    "image": "",
+    "image_url": "pages/images/products/TIRAMISU.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 40,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH CHUỐI",
+    "price": "29000",
+    "description": "Bánh chuối truyền thống, sự kết hợp của 100%\n                                            chuối tươi và nước cốt dừa Việt Nam.",
+    "image": "",
+    "image_url": "pages/images/products/BANHCHUOI.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 41,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH MOUSSE CACAO",
+    "price": "35000",
+    "description": "Bánh Mousse Ca Cao, là sự kết hợp giữa ca-cao\n                                            Việt Nam đậm đà cùng kem tươi.",
+    "image": "",
+    "image_url": "pages/images/products/MOUSSECACAO.png"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 42,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH MOUSSE ĐÀO",
+    "price": "35000",
+    "description": "Một sự kết hợp khéo léo giữa kem và lớp bánh\n                                            mềm, được phủ lên trên vài lát đào ngon tuyệt.",
+    "image": "",
+    "image_url": "pages/images/products/MOUSSEDAO.png"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 43,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH SÔ-CÔ-LA HIGHLANDS",
+    "price": "35000",
+    "description": "Một chiếc bánh độc đáo! Sô cô la ngọt ngào và\n                                            kem tươi béo ngậy, được phủ thêm một lớp sô cô la mỏng bên trên cho thêm\n                                            phần hấp dẫn.",
+    "image": "",
+    "image_url": "pages/images/products/SOCOLAHL.png"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 44,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH PHÔ MAI CÀ PHÊ",
+    "price": "29000",
+    "description": "Làm từ cà phê truyền thống của TNK Coffee, kết\n                                            hợp với phô mai thơm ngon! Chiếc bánh phù hợp đi cùng với bất cứ món cà phê\n                                            nào!",
+    "image": "",
+    "image_url": "pages/images/products/PHOMAICAPHE.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 45,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH PHÔ MAI CHANH DÂY",
+    "price": "29000",
+    "description": "Vị béo của phô mai cùng với vị chua của chanh\n                                            dây, tạo nên chiếc bánh thơm ngon hấp dẫn!",
+    "image": "",
+    "image_url": "pages/images/products/PHOMAICHANHDAY.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 46,
+  "fields": {
+    "category": 4,
+    "name": "BÁNH PHÔ MAI TRÀ XANH",
+    "price": "35000",
+    "description": "Một sự sáng tạo mới mẻ, kết hợp giữa trà xanh\n                                            đậm đà và phô mai ít béo.",
+    "image": "",
+    "image_url": "pages/images/products/PHOMAITRAXANH.jpg"
+  }
+},
+{
+  "model": "pages.product",
+  "pk": 48,
+  "fields": {
+    "category": 4,
+    "name": "Bánh Croissant",
+    "price": "29000",
+    "description": "Thưởng thức bánh croissant giòn tan, thơm ngon tại TNK Coffee. Được làm từ bột mì cao cấp và bơ tươi, bánh mang đến hương vị Pháp tinh tế. Kết hợp hoàn hảo với ly cà phê đậm đà.",
+    "image": "products/CROISSANT.jpg",
+    "image_url": "pages/images/products/CROISSANT.jpg"
+  }
+}
+]
